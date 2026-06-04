@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0a0e14;
+}
+
+/* Prevent text selection during drag */
+.lanyard-carousel {
+  user-select: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e14;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+/* Card swing animation keyframes */
+@keyframes swing-in {
+  0% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-1.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Glow pulse for active card */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--glow-color, rgba(0, 229, 201, 0.3));
+  }
+  50% {
+    box-shadow: 0 0 40px var(--glow-color, rgba(0, 229, 201, 0.5));
+  }
+}
